@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Registration Form
+    </title>
+    <script>
+        function ValidateForm() {
+            var name = document.f1.name.value;
+            var password = document.f1.password.value;
+            var email = document.f1.email.value;
+            var phone = document.f1.phone.value;
+
+            var namePattern = /^[A-Za-z]{6,}$/;
+            var phonePattern = /^[0-9]{10}$/;
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!namePattern.test(name)) {
+                alter("Name must contain only alphabets and minimum 6 characters");
+                return false;
+            }
+
+            if (password.length < 6) {
+                alter("Password must be atleast 6 characters.");
+                return false;
+            }
+
+            if (!phonePattern.test(phone)) {
+                alter("Phone number must contain exactly 10 digits");
+            }
+            if (!emailPattern.test(email)) {
+                alter("Enter a valid email address");
+                return false;
+            }
+
+            alter("Registration Successful");
+        }
+    </script>
+</head>
+
+<body>
+    <h3>Registration Form</h3>
+    <form name="f1" onsubmit="return validateForm()">
+        Name: <input type="text" name="name"><br><br>
+        Password: <input type="password" name="password"><br><br>
+        Email: <input type="text" name="email"><br><br>
+        Phone: <input type="text" name="phone"><br><br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+
+</html>
