@@ -1,49 +1,41 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-    <center>
-        <title>BOOK STORE</title>
-</head>
-
-<body>
-    <table cellspacing="0" border="1" width=" 100%" height="50%">
-        <tr>
-            <th colspan="5">BOOK STORE</th>
-        </tr>
-        <tr>
-            <th>BOOKNAME</th>
-            <th>FRONTPAGE</th>
-            <th>DETAILS</th>
-            <th>COST</th>
-            <th>CART</th>
-
-        </tr>
-        <tr>
-            <td><a href="java.html" target="2">JAVA</a></td>
-            <td><img src="java.jpg" alt="JAVA" width="100" height="150"></td>
-            <td>AUTHOR<br>NAME:<br>PAGES:<br>EDITION:</td>
-            <td>1000</td>
-            <td><BUTTON>Add to cart </BUTTON></td>
-        </tr>
-        <tr>
-            <td><a href="c.html" target="2">c</a> </td>
-            <td><img src="download (1).jfif" alt="JAVA" width="100" height="150"></td>
-            <td>AUTHOR<br>NAME:<br>PAGES:<br>EDITION:</td>
-            <td>3000</td>
-            <td><BUTTON>Add to cart </BUTTON></td>
-        </tr>
-        <tr>
-            <td><a href="c++.html" target="2">c++</a></td>
-            <td><img src="download (2).jfif" alt="JAVA" width="100" height="150"></td>
-            <td>AUTHOR<br>NAME:<br>PAGES:<br>EDITION:</td>
-            <td>1000</td>
-            <td><BUTTON>Add to cart </BUTTON></td>
-        </tr>
-       
-
-    </table>
-    </center>
-</body>
-
+<html lang="en">
+    <head>
+        <title>Java Script popup Boxes</title>
+        <script>
+            function showAlert() {
+                alert("This is an alert box!");
+                
+            }
+            function showConfirm() {
+                var result = confirm("Do you want to proceed?");
+                if (result) {
+                    document.getElementById("output").innerHTML = "You pressed OK!";
+                } else {
+                    document.getElementById("output").innerHTML = "You pressed Cancel!";
+                }
+            }
+            function showPrompt() {
+                var name = prompt("Please enter your name:", "Sathvikashivani");
+                var age = prompt("Please enter your age:", "19");
+                var city = prompt("Please enter your city:", "Warangal");
+                if (name != null) {
+                    document.getElementById("output").innerHTML = "Hello " + name + "!";
+                }
+                if (age != null) {
+                    document.getElementById("output").innerHTML += "<br>Your age is " + age + ".";
+                }
+                if (city != null) {
+                    document.getElementById("output").innerHTML += "<br>You live in " + city + ".";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>UserDetails</h1>
+        <button onclick="showAlert()"> Alert</button>
+        <button onclick="showConfirm()"> Confirm</button>
+        <button onclick="showPrompt()"> Prompt</button>
+        <p id="output"></p>
+    </body>
 </html>
